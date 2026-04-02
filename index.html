@@ -5,7 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shanza Shoukat CV</title>
 
+<!-- Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- CSS -->
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,8 +19,10 @@
 
   <!-- SIDEBAR -->
   <div class="sidebar">
-    <h1>Shanza<br>Shoukat</h1>
-    <p class="title">Mathematics Teacher</p>
+    <div class="profile">
+      <h1>Shanza Shoukat</h1>
+      <p class="title">Mathematics Teacher</p>
+    </div>
 
     <div class="section">
       <h3>CONTACT</h3>
@@ -38,7 +44,8 @@
       <p>Urdu</p>
     </div>
   </div>
-  <!-- MAIN -->
+
+  <!-- MAIN CONTENT -->
   <div class="main">
 
     <section>
@@ -48,20 +55,22 @@
         Passionate about helping students succeed and improve their understanding of mathematical concepts.
       </p>
     </section>
-<section>
-  <h2>EXPERIENCE</h2>
 
-  <div class="card">
-    <h4>Mathematics Teacher – Arqam Model High School</h4>
-    <p>1 Year Experience (Matric Students)</p>
-  </div>
+    <section>
+      <h2>EXPERIENCE</h2>
 
-  <div class="card">
-    <h4>Private Tutor</h4>
-    <p>6 Years Experience – Teaching Matric & Intermediate Students (Currently Teaching)</p>
-  </div>
+      <div class="card">
+        <h4>Mathematics Teacher – Arqam Model High School</h4>
+        <p>1 Year Experience (Matric Students)</p>
+      </div>
 
-</section>
+      <div class="card">
+        <h4>Private Tutor</h4>
+        <p>6 Years Experience – Teaching Matric & Intermediate Students (Currently Teaching)</p>
+      </div>
+
+    </section>
+
     <section>
       <h2>EDUCATION</h2>
 
@@ -87,12 +96,21 @@
 
     </section>
 
+    <!-- BUTTON WRAPPER -->
+    <div class="download-wrapper">
+      <button onclick="downloadPDF()" class="download-btn">Download CV (PDF)</button>
+    </div>
+
   </div>
 
 </div>
 
+<!-- PDF Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<!-- Custom JS -->
+<script src="script.js"></script>
+
 </body>
 </html>
-<button onclick="downloadPDF()" class="download-btn">
-  Download CV (PDF)
-</button>
