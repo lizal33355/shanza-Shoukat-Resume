@@ -1,13 +1,19 @@
 function downloadPDF() {
   const element = document.querySelector(".container");
 
-  const opt = {
-    margin: 0,
-    filename: 'Shanza_Shoukat_CV.pdf',
-    image: { type: 'jpeg', quality: 1 },
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-  };
+  html2canvas(element, { scale: 3 }).then((canvas) => {
+    const imgData = canvas.toDataURL('image/png');
 
-  html2pdf().set(opt).from(element).save();
+    // A4 dimensions in px (approx for 96 dpi)
+    const pdfWidth = 595;  // A4 width
+    const pdfHeight = 842; // A4 height
+
+    // calculate height to maintain aspect ratio
+    const imgWidth = pdfWidth;
+    const imgHeight = canvas.height * pdfWidth / canvas.width;
+
+    const pdf = new jspdf.jsPDF('p', 'pt', 'a4');
+    pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+    pdf.save('Shanza_Shoukat_CV.pdf');
+  });
 }
